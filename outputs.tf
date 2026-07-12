@@ -1,3 +1,7 @@
+output "healthcare_workspaces_id" {
+  description = "Map of id values across all healthcare_workspaces, keyed the same as var.healthcare_workspaces"
+  value       = { for k, v in azurerm_healthcare_workspace.healthcare_workspaces : k => v.id }
+}
 output "healthcare_workspaces_location" {
   description = "Map of location values across all healthcare_workspaces, keyed the same as var.healthcare_workspaces"
   value       = { for k, v in azurerm_healthcare_workspace.healthcare_workspaces : k => v.location }
